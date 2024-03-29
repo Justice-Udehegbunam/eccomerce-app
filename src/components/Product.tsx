@@ -15,19 +15,19 @@ const Product = ({
   REDUCER_ACTIONS,
 }: PropsType): ReactElement => {
   const imagePath = `../assets/images/${product.sku}.jpg`;
-  console.log("Image Path:", imagePath);
+  // console.log("Image Path:", imagePath);
 
   const baseURL = import.meta.url;
-  console.log("Base URL:", baseURL);
+  // console.log("Base URL:", baseURL);
 
   const imgURL = new URL(imagePath, baseURL).href;
-  console.log("Final Image URL:", imgURL);
+  // console.log("Final Image URL:", imgURL);
 
   const onAddToCart = () => {
     dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...product, qty: 1 } });
   };
 
-  const itemInCart = inCart ? `&#xf101; right: ✔` : null;
+  const itemInCart = inCart ? ` added: ✔` : null;
 
   const content = (
     <article>
